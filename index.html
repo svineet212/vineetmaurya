@@ -1,267 +1,467 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Vineet Kumar</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="Startup.css">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    <style type="text/css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vineet Kumar — Software Engineer</title>
+<meta name="description" content="Vineet Kumar — software engineer specializing in solutioning, IoT, embedded systems, control & instrumentation software, and full-stack development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f9fb;
+    --panel:#ffffff;
+    --border:#d7dee6;
+    --border-strong:#b9c4d0;
+    --text:#152233;
+    --text-dim:#54677a;
+    --text-faint:#8b98a6;
+    --blue:#1d4ed8;
+    --blue-dim:#eaf0fd;
+    --emerald:#0f8a5f;
+    --emerald-dim:#e7f5ee;
+    --amber:#b3720f;
+    --amber-dim:#fbf0e0;
+    --font-display:'Space Grotesk',sans-serif;
+    --font-body:'IBM Plex Sans',sans-serif;
+    --font-mono:'JetBrains Mono',monospace;
+    --maxw:1100px;
+  }
 
-        .topp{
-            
-            border: 1px solid transparent;
-        }
-        .bd{
-            
-            background-color: transparent;
-            color: white;
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
 
-            
-        }
-        .bdd{
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font-body);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
 
-        
-            background-color: transparent;   
+  body::before{
+    content:'';
+    position:fixed;inset:0;
+    background-image:
+      linear-gradient(rgba(29,78,216,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(29,78,216,0.05) 1px, transparent 1px);
+    background-size:48px 48px;
+    mask-image:linear-gradient(to bottom, black 0%, black 25%, transparent 70%);
+    pointer-events:none;
+    z-index:0;
+  }
 
-        }
-         .footer{
-         height: 100px;
-         width: 100%;
-         font-size: 20px;   
-         background-color: black; 
-         text-align: center; 
-         color: white;
-         text-decoration-line: none;
-         text-decoration-color: none;
-         text-transform: capitalize;
-         margin: 35px;
-        
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;position:relative;z-index:1;}
 
-        }
-    .marginbutton{
-        margin-bottom: 5px;
-    }
-    .black{
-        background-color: black;
-        height: 40px; 
-        text-align: center;
-        padding-top: 1px;
-        color: white;
-    }
-.blacktext{
-    color: black;
-}
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    background:rgba(247,249,251,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;}
+  .brand{
+    font-family:var(--font-display);
+    font-weight:600;font-size:16px;
+    display:flex;align-items:center;gap:9px;
+  }
+  .brand .mark{
+    width:26px;height:26px;
+    border:1.5px solid var(--blue);
+    border-radius:5px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--font-mono);font-size:10px;font-weight:500;
+    color:var(--blue);
+  }
+  .navlinks{display:flex;gap:30px;font-family:var(--font-mono);font-size:12.5px;color:var(--text-dim);}
+  .navlinks a{position:relative;padding-bottom:3px;transition:color .2s;}
+  .navlinks a::after{
+    content:'';position:absolute;left:0;bottom:0;width:0;height:1.5px;
+    background:var(--blue);transition:width .25s;
+  }
+  .navlinks a:hover{color:var(--text);}
+  .navlinks a:hover::after{width:100%;}
 
-    .thumtext{
-         
-         background-color: transparent; 
-         text-align: center; 
-         color: black;
+  /* ---------- HERO ---------- */
+  header.hero{padding:158px 0 84px;position:relative;}
+  .doc-tag{
+    font-family:var(--font-mono);
+    font-size:11.5px;color:var(--blue);
+    background:var(--blue-dim);
+    border:1px solid rgba(29,78,216,0.2);
+    display:inline-flex;align-items:center;gap:8px;
+    padding:6px 12px;border-radius:5px;
+    margin-bottom:26px;
+    letter-spacing:0.02em;
+  }
+  .doc-tag .sep{color:rgba(29,78,216,0.4);}
 
-         background-color: white; 
-         text-decoration-line: none;
-         text-decoration-color: none;
-         text-transform: capitalize;
-        
+  h1.name{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:clamp(38px,6.5vw,64px);
+    line-height:1.05;
+    letter-spacing:-0.015em;
+    margin-bottom:20px;
+    color:var(--text);
+  }
+  h1.name .last{color:var(--blue);}
 
-    }
-    .thumtext a:hover {
-         font-size:1em;
-         background-color: transparent; 
-         text-align: center; 
-         color: red;
+  .tagline{
+    font-size:clamp(16.5px,2vw,19px);
+    color:var(--text-dim);
+    max-width:660px;
+    margin-bottom:34px;
+  }
+  .tagline b{color:var(--text);font-weight:600;}
 
-}
+  .meta-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:52px;}
+  .pill{
+    font-family:var(--font-mono);font-size:12px;color:var(--text-dim);
+    border:1px solid var(--border);background:var(--panel);
+    padding:8px 14px;border-radius:20px;
+    display:flex;align-items:center;gap:7px;
+  }
+  .pill.live{color:var(--emerald);border-color:rgba(15,138,95,0.25);background:var(--emerald-dim);}
+  .pill .dot{width:6px;height:6px;border-radius:50%;background:currentColor;}
+
+  .stats{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    border:1px solid var(--border);border-radius:10px;overflow:hidden;
+    background:var(--panel);
+    box-shadow:0 1px 2px rgba(21,34,51,0.04);
+  }
+  .stat{padding:22px 20px;border-right:1px solid var(--border);}
+  .stat:last-child{border-right:none;}
+  .stat .num{font-family:var(--font-display);font-size:24px;font-weight:700;color:var(--text);}
+  .stat .num span{color:var(--blue);}
+  .stat .label{
+    font-family:var(--font-mono);font-size:10.5px;color:var(--text-faint);
+    text-transform:uppercase;letter-spacing:0.05em;margin-top:5px;
+  }
+  @media (max-width:640px){
+    .stats{grid-template-columns:repeat(2,1fr);}
+    .stat:nth-child(2){border-right:none;}
+    .stat:nth-child(3),.stat:nth-child(4){border-top:1px solid var(--border);}
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:88px 0;border-top:1px solid var(--border);}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:14px;}
+  .sec-head .idx{font-family:var(--font-mono);font-size:12px;color:var(--blue);font-weight:500;}
+  .sec-head h2{font-family:var(--font-display);font-size:27px;font-weight:700;color:var(--text);}
+  .sec-sub{color:var(--text-dim);font-size:15px;max-width:600px;margin-bottom:40px;}
+
+  /* ---------- GRIDS ---------- */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  @media (max-width:760px){.grid,.grid-3{grid-template-columns:1fr;}}
+  @media (max-width:900px) and (min-width:761px){.grid-3{grid-template-columns:repeat(2,1fr);}}
+
+  .panel{
+    position:relative;
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:26px 24px 22px;
+    transition:border-color .25s, box-shadow .25s, transform .25s;
+    opacity:0;transform:translateY(12px);
+  }
+  .panel.in{opacity:1;transform:translateY(0);}
+  .panel:hover{border-color:var(--border-strong);box-shadow:0 6px 18px rgba(21,34,51,0.06);}
+
+  .panel::before,.panel::after{
+    content:'';position:absolute;width:12px;height:12px;
+    border-top:1.5px solid var(--blue);border-left:1.5px solid var(--blue);
+    top:-1px;left:-1px;opacity:0.55;
+  }
+  .panel::after{
+    top:auto;left:auto;bottom:-1px;right:-1px;
+    border-top:none;border-left:none;
+    border-bottom:1.5px solid var(--blue);border-right:1.5px solid var(--blue);
+  }
+
+  .panel-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px;}
+  .status{
+    font-family:var(--font-mono);font-size:10.5px;
+    display:flex;align-items:center;gap:6px;
+    text-transform:uppercase;letter-spacing:0.05em;
+    padding:4px 9px;border-radius:5px;
+  }
+  .status.live{color:var(--emerald);background:var(--emerald-dim);}
+  .status.build{color:var(--amber);background:var(--amber-dim);}
+  .status .dot{width:5px;height:5px;border-radius:50%;background:currentColor;}
+  .panel-link{
+    font-family:var(--font-mono);font-size:11px;color:var(--text-faint);
+    border:1px solid var(--border);padding:4px 9px;border-radius:5px;
+    transition:color .2s, border-color .2s;
+  }
+  .panel a.panel-link:hover{color:var(--blue);border-color:rgba(29,78,216,0.3);}
+  .panel h3{font-family:var(--font-display);font-size:18px;font-weight:700;margin-bottom:9px;color:var(--text);}
+  .panel p{color:var(--text-dim);font-size:14px;margin-bottom:16px;}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;}
+  .tag{
+    font-family:var(--font-mono);font-size:10.5px;color:var(--text-dim);
+    background:var(--bg);border:1px solid var(--border);
+    padding:3px 8px;border-radius:4px;
+  }
+
+  /* expertise cards — no status pill, small index tag instead */
+  .exp-tag{
+    font-family:var(--font-mono);font-size:10px;color:var(--blue);
+    background:var(--blue-dim);display:inline-block;
+    padding:3px 8px;border-radius:4px;margin-bottom:13px;
+    letter-spacing:0.03em;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-body{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:start;}
+  @media (max-width:760px){.about-body{grid-template-columns:1fr;gap:32px;}}
+  .about-body p{color:var(--text-dim);font-size:15.5px;margin-bottom:18px;}
+  .about-body p b{color:var(--text);font-weight:600;}
+
+  .side-panel{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:6px 24px;}
+  .side-panel .row{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--border);font-size:13.5px;}
+  .side-panel .row:last-child{border-bottom:none;}
+  .side-panel .row .k{color:var(--text-faint);font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.03em;white-space:nowrap;}
+  .side-panel .row .v{color:var(--text);text-align:right;font-weight:500;}
+
+  /* ---------- FOOTER — title-block style ---------- */
+  footer{padding:88px 0 0;border-top:1px solid var(--border);}
+  .contact-head{
+    font-family:var(--font-display);font-weight:700;
+    font-size:clamp(30px,4.5vw,42px);
+    margin-bottom:16px;max-width:600px;color:var(--text);
+  }
+  .contact-head .accent{color:var(--blue);}
+  footer p.sub{color:var(--text-dim);max-width:480px;margin-bottom:34px;font-size:15px;}
+  .contact-links{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:56px;}
+  .clink{
+    font-family:var(--font-mono);font-size:13px;
+    border:1px solid var(--border);background:var(--panel);
+    padding:11px 18px;border-radius:8px;
+    display:flex;align-items:center;gap:8px;color:var(--text);
+    transition:border-color .2s, color .2s, background .2s;
+  }
+  .clink:hover{border-color:rgba(29,78,216,0.3);color:var(--blue);background:var(--blue-dim);}
+
+  .title-block{
+    border-top:1.5px solid var(--text);
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+  }
+  .title-block .cell{
+    padding:14px 20px;
+    border-right:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+  }
+  .title-block .cell:last-child{border-right:none;}
+  .title-block .cell .k{
+    font-family:var(--font-mono);font-size:9.5px;color:var(--text-faint);
+    text-transform:uppercase;letter-spacing:0.06em;margin-bottom:5px;
+  }
+  .title-block .cell .v{font-family:var(--font-mono);font-size:12.5px;color:var(--text);}
+  @media (max-width:640px){
+    .title-block{grid-template-columns:repeat(2,1fr);}
+  }
+
+  ::selection{background:var(--blue-dim);color:var(--blue);}
+  :focus-visible{outline:2px solid var(--blue);outline-offset:2px;}
 </style>
-
-
-<!-- Optional theme -->
-     
-
 </head>
 <body>
-    <br>
-   <nav class="navbar navbar-default navbar-fixed-top ">
-       <div class="container">
-           <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                   <span class="sr-only">Toggle navigation</span>
-                   <span class="icon-bar"></span>
-                   <span class="icon-bar"></span>
-                   <span class="icon-bar"></span>
-                 </button>
-               <a class="navbar-brand" href="#">
-               VINEET
-               </a>
-           </div>
-         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-   
-           <div>
-   
-               <ul class="nav  navbar-nav">
-                <li class=""><a href=""></a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Contect</a></li>
-               </ul>
-               
-           </div>
-           <div class="nav navbar-nav navbar-right">
-               <ul class="nav navbar-nav navbar-right">
-                    
-                   <li><a href=""><i class="fa fa-github" aria-hidden="true"></i> GitHub</a></li>
-                   <li><a href=""><i class="fa fa-linkedin" aria-hidden="true"></i> Linkedin</a></li>
-                    
-               </ul>
-               
-           </div>
-        </div>
-       </div>
-   </nav>
-    <center>
-        <div class="jumbotron bd" >
-            <br>
-            <br>
-            <br>
-                <h1>Hello, I a'm Vineet Kumar </h1>
-                <p> I a'm Java Full Stack Developer.<br> I am Student of Computer Science Of Engineering <br> Kamla Nehru Insititute of Technology Sultanpur U.P.(India).<br>
-                </span></p>
-        </div>
-    <div class="jumbotron bd">
-    <div class="span3 well bd">
-        <center>
-            <br>
-            <br>
-            <br>
-            <br>
-        <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="https://lh3.googleusercontent.com/-prbLcYKVxck/Wvf5QkLU16I/AAAAAAAACPU/lncoTmY1QGwDdBE58al1e2yNjoEelp3gwCEwYBhgL/w140-h140-p/WhatsApp%2BImage%2B2018-05-08%2Bat%2B12.56.09%2BPM.jpeg=" name="aboutme" width="140" height="140" class="img-circle"></a>
-        <h3 class="bd">Vineet Kumar </h3>
-        <em>Click On Picture for more Detail</em>
-        </center>
+
+<nav>
+  <div class="wrap">
+    <div class="brand"><span class="mark">VK</span>Vineet Kumar</div>
+    <div class="navlinks">
+      <a href="#expertise">expertise</a>
+      <a href="#work">work</a>
+      <a href="#about">about</a>
+      <a href="#contact">contact</a>
     </div>
-    <!-- Modal -->
-    <div class="modal fade blacktext" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                    <h4 class="modal-title" id="myModalLabel">More About Vineet </h4>
-                    </div>
-                    <div class="modal-body">
-                    <center>
-                    <img src="https://lh3.googleusercontent.com/-prbLcYKVxck/Wvf5QkLU16I/AAAAAAAACPU/lncoTmY1QGwDdBE58al1e2yNjoEelp3gwCEwYBhgL/w140-h140-p/WhatsApp%2BImage%2B2018-05-08%2Bat%2B12.56.09%2BPM.jpeg" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
-                    <h3 class="media-heading">Vineet Kumar <small>India</small></h3>
-                    <div class="text-left">
-                        <span><strong>Skills</strong></span><br>&nbsp; 
-                        <span><strong>Programming Knowledge: </strong></span>
-                        <span class="label label-success">HTML5/CSS</span>
-                        <span class="label label-success">CORE JAVA</span>
-                        <span class="label label-success">Advanced Java</span>
-                        <span class="label label-success">Java EE</span>
-                        <span class="label label-success">JAVAFX</span>
-                        <span class="label label-success">JavaScript</span>
-                        <span class="label label-success">SQL</span>
-                        <span class="label label-warning">Python</span><br><br>
+  </div>
+</nav>
 
-                        &nbsp;<span><strong>Tools: </strong></span>
-                        <span class="label label-info">Adobe CS 5.5</span>
-                        <span class="label label-success">Sublime Text Editor</span>
-                        <span class="label label-success">NetBeans 8.2</span>
-                        <span class="label label-info">Eclips</span>
-                        <span class="label label-success">Apaceh Tomcat</span>
-                        <span class="label label-success">Apache Xampp</span>
-                        <span class="label label-info">Microsoft Office</span>
-                        <span class="label label-info">Anaconda</span>
-                        <span class="label label-success">Nodepad++</span><br><br>
+<header class="hero wrap">
+  <div class="doc-tag">DOC: PORTFOLIO<span class="sep">/</span>REV. 2026<span class="sep">/</span>SHEET 1 OF 1</div>
+  <h1 class="name">Vineet <span class="last">Kumar</span></h1>
+  <p class="tagline">Software engineer handling <b>design, solutioning, support, and upgrades</b> end to end — across databases, web backends, modern IoT, and industrial control &amp; instrumentation software.</p>
 
-                     &nbsp;<span><strong>OS: </strong></span>
-                        <span class="label label-success">Windows XP, Vista, 7,8,10,Ubuntu,Kali ,Mint OS</span>
-                    </center>
-                    <hr>
-                    <center>
-                    <p class="text-left"><strong>Bio: </strong><br>
-                        I am A passionate  Developer with different Plateform.
-                      <br>
-                    </center>
-                </div>
-                <div class="modal-footer">
-                    <center>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">I've heard enough about Vineet</button>
-                    </center>
-                </div>
-            </div>
-        </div>
+  <div class="meta-row">
+    <span class="pill live"><span class="dot"></span>open to freelance &amp; contract work</span>
+    <span class="pill">Meerganj, Bareilly, Uttar Pradesh, India</span>
+    <span class="pill">InstrumentGuru &amp; Chairy Foundation</span>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="num">Since <span>2016</span></div><div class="label">building software</div></div>
+    <div class="stat"><div class="num"><span>47</span></div><div class="label">db tables shipped</div></div>
+    <div class="stat"><div class="num">PLC <span>+</span> DCS</div><div class="label">C&amp;I software</div></div>
+    <div class="stat"><div class="num">IoT <span>+</span> Web</div><div class="label">works across both</div></div>
+  </div>
+</header>
+
+<section id="expertise">
+  <div class="wrap">
+    <div class="sec-head"><span class="idx">01 /</span><h2>Areas of expertise</h2></div>
+    <p class="sec-sub">A decade across software and control systems — I take on the whole lifecycle: design, build, support, and upgrade.</p>
+
+    <div class="grid-3">
+      <div class="panel">
+        <span class="exp-tag">SOLUTIONING</span>
+        <h3>Software design &amp; solutioning</h3>
+        <p>Scoping and architecting solutions end to end, then staying on for support and upgrades rather than handing off and moving on.</p>
+      </div>
+      <div class="panel">
+        <span class="exp-tag">BACKEND</span>
+        <h3>Database, Python &amp; web backends</h3>
+        <p>Database design, Django and Node.js backends, and the full-stack work needed to ship a product, not just a prototype.</p>
+      </div>
+      <div class="panel">
+        <span class="exp-tag">IOT &amp; EMBEDDED</span>
+        <h3>Modern IoT &amp; embedded development</h3>
+        <p>Custom and embedded development for IoT devices — from firmware-level work to the servers and dashboards behind them.</p>
+      </div>
+      <div class="panel">
+        <span class="exp-tag">CONTROL SYSTEMS</span>
+        <h3>Control &amp; instrumentation</h3>
+        <p>Deep, hands-on experience with control &amp; instrumentation, including handling PLC and DCS software directly.</p>
+      </div>
+      <div class="panel">
+        <span class="exp-tag">APPS</span>
+        <h3>Desktop &amp; Android development</h3>
+        <p>Desktop application development alongside Android, for teams that need software running outside the browser too.</p>
+      </div>
+      <div class="panel">
+        <span class="exp-tag">INFRA</span>
+        <h3>Messaging, networking &amp; troubleshooting</h3>
+        <p>Managing Kafka and MQTT servers, plus general networking and troubleshooting to keep systems talking to each other.</p>
+      </div>
     </div>
-</div>
-</center>
-<div class="container">
-    <center>
-        <div class="page-header ">
-                  <h1 class="bd marginbutton">My Projects</h1>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head"><span class="idx">02 /</span><h2>Things I've built</h2></div>
+    <p class="sec-sub">A selection of what I've shipped and what's currently in progress.</p>
+
+    <div class="grid">
+
+      <div class="panel">
+        <div class="panel-top">
+          <span class="status live"><span class="dot"></span>live · production</span>
+          <span class="panel-link">private repo</span>
         </div>
-        
-    </center>  
-        <div class="row ">
-           <div class="col-lg-4 col-sm-6">
-            <div class=" thumbnail  thumtext">
-            <!--   <img src="http://i.imgur.com/qK42fUu.jpg" alt=""> -->
-              <p><a href="https://vksmpic.github.io/vineetmaurya/" class="thumtext">  <img src="https://www.wayanadweb.com/images/software-development-service-wayanadweb.jpg" alt="">
-              Desktop Application Development</a></p></p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <div class=" thumbnail  thumtext">
-            <!--   <img src="http://i.imgur.com/qK42fUu.jpg" alt=""> -->
-              <p><a href="https://vksmpic.github.io/vineetmaurya/" class="thumtext">  <img src="https://www.wayanadweb.com/images/software-development-service-wayanadweb.jpg"" alt="">
-              Web Development With JavaScript</a></p></p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <div class=" thumbnail  thumtext">
-            <!--   <img src="http://i.imgur.com/qK42fUu.jpg" alt=""> -->
-              <p><a href="https://vksmpic.github.io/vineetmaurya/" class="thumtext">  <img src="https://www.wayanadweb.com/images/software-development-service-wayanadweb.jpg"" alt="">
-              Web Application Development</a></p></p>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-sm-6">
-            <div class=" thumbnail  thumtext">
-            <!--   <img src="http://i.imgur.com/qK42fUu.jpg" alt=""> -->
-              <p><a href="https://vksmpic.github.io/vineetmaurya/" class="thumtext">  <img src="https://www.wayanadweb.com/images/software-development-service-wayanadweb.jpg"" alt="">
-              Web Development with JAVA EE </a></p></p>
-            </div>
-          </div>
-          
+        <h3>iGuruNetra</h3>
+        <p>Flagship enterprise attendance platform for Chairy Foundation. TimescaleDB attendance hypertables, a Kafka rule engine, mTLS device auth, and an AES-256-GCM PII vault — built to enterprise standard on every dimension, not "fix it later."</p>
+        <div class="tags">
+          <span class="tag">FastAPI</span><span class="tag">React / Vite</span><span class="tag">PostgreSQL + TimescaleDB</span><span class="tag">Kafka</span><span class="tag">Keycloak</span><span class="tag">Docker</span>
         </div>
-          
-        <!-- footer -->
-        <div class="container black">
-            <center>
+      </div>
 
-
-                <p>Tags: 
-                    <a href="#"><span class="label label-info">UMANGUP</span></a> 
-                    <a href="#"><span class="label label-info">vkmSolution</span></a> 
-                    <a href="#"><span class="label label-info">java</span></a> 
-                    <a href="#"><span class="label label-info">Python</span></a>
-                    | <i class="icon-user"></i> <a href="#">C</a> 
-                    | <i class="icon-calendar"></i> Jan 16th, 2019 at 4:20 pm
-                    | <i class="icon-comment"></i> <a href="#"> Comments</a>
-                    | <i class="icon-share"></i> <a href="#">6 Shares</a>
-                </p>
-        
-         </center>  
+      <div class="panel">
+        <div class="panel-top">
+          <span class="status live"><span class="dot"></span>live · production</span>
+          <a class="panel-link" href="https://falconexporthub.in" target="_blank" rel="noopener">falconexporthub.in →</a>
         </div>
+        <h3>Falcon Export Hub</h3>
+        <p>B2B export site for door hardware, built on a fully custom WordPress theme with black-and-gold branding. Custom mega-menu, a branching chatbot, and a CRM-style unified leads system tracking dealer enquiries and callbacks.</p>
+        <div class="tags">
+          <span class="tag">WordPress</span><span class="tag">WooCommerce</span><span class="tag">Custom PHP</span><span class="tag">CRM leads</span>
+        </div>
+      </div>
 
-        
+      <div class="panel">
+        <div class="panel-top">
+          <span class="status build"><span class="dot"></span>in rebuild</span>
+          <a class="panel-link" href="https://akkaprints.com" target="_blank" rel="noopener">akkaprints.com →</a>
+        </div>
+        <h3>AkkaPrints</h3>
+        <p>Web-to-print platform with a Fabric.js canvas design editor, currently being rebuilt from scratch as a clean WooCommerce architecture — the design editor split out into its own standalone plugin.</p>
+        <div class="tags">
+          <span class="tag">WooCommerce</span><span class="tag">Fabric.js</span><span class="tag">PHP</span><span class="tag">Custom plugins</span>
+        </div>
+      </div>
 
+      <div class="panel">
+        <div class="panel-top">
+          <span class="status live"><span class="dot"></span>live</span>
+          <span class="panel-link">utility tool</span>
+        </div>
+        <h3>Upbhulekh Calculator</h3>
+        <p>A calculator utility built around Uttar Pradesh's Bhulekh land-record system — one of the earlier tools I built and shipped independently.</p>
+        <div class="tags">
+          <span class="tag">Utility software</span><span class="tag">Independent build</span>
+        </div>
+      </div>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head"><span class="idx">03 /</span><h2>About</h2></div>
+    <div class="about-body">
+      <div>
+        <p>I've been working in software since <b>2016</b>, and I run two ventures — <b>InstrumentGuru</b> and <b>Chairy Foundation</b> — where I handle software design, solutioning, support, and upgrades for clients end to end.</p>
+        <p>My background sits at the intersection of IT and industrial systems: an <b>MBA in IT and Administration</b>, a bachelor's degree in <b>Computer Science</b>, and hands-on time with <b>control &amp; instrumentation</b> — PLC and DCS software included. I'm an <b>ex-TCS</b> employee and an <b>ex-KNITian</b> (Kamla Nehru Institute of Technology), where I was also a member of the <b>KNIT Developer Club</b>.</p>
+        <p>I keep learning deliberately — a steady stream of Udemy courses to stay current — and I like taking on work across the stack: databases, Python/Django/Node.js backends, Android and desktop apps, embedded and modern IoT development, and the Kafka/MQTT infrastructure that ties it together.</p>
+        <p>I also go by <b>Vineet Maurya</b> as a personal brand name across some of my earlier work — same person, same GitHub.</p>
+      </div>
+      <div class="side-panel">
+        <div class="row"><span class="k">Org</span><span class="v">InstrumentGuru &amp; Chairy Foundation</span></div>
+        <div class="row"><span class="k">Role</span><span class="v">Design, solutioning &amp; support</span></div>
+        <div class="row"><span class="k">Education</span><span class="v">MBA (IT &amp; Admin), B.Sc CS</span></div>
+        <div class="row"><span class="k">Alma mater</span><span class="v">KNIT — Dev Club member</span></div>
+        <div class="row"><span class="k">Ex-employer</span><span class="v">TCS</span></div>
+        <div class="row"><span class="k">In software since</span><span class="v">2016</span></div>
+        <div class="row"><span class="k">Location</span><span class="v">Meerganj, Bareilly, UP</span></div>
+        <div class="row"><span class="k">GitHub</span><span class="v">@svineet212</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="sec-head"><span class="idx">04 /</span></div>
+    <h2 class="contact-head">Building something?<br>Let's talk<span class="accent">.</span></h2>
+    <p class="sub">Open to freelance projects, contract work, and anything that spans software, IoT, and control systems.</p>
+    <div class="contact-links">
+      <a class="clink" href="https://github.com/svineet212" target="_blank" rel="noopener">↗ github.com/svineet212</a>
+      <a class="clink" href="mailto:youremail@example.com">✉ youremail@example.com</a>
+    </div>
+  </div>
+  <div class="title-block">
+    <div class="cell"><div class="k">Drawn by</div><div class="v">Vineet Kumar</div></div>
+    <div class="cell"><div class="k">Date</div><div class="v">2026</div></div>
+    <div class="cell"><div class="k">Location</div><div class="v">Bareilly, UP, IN</div></div>
+    <div class="cell"><div class="k">Status</div><div class="v">Approved for view</div></div>
+  </div>
+</footer>
+
+<script>
+  const panels = document.querySelectorAll('.panel');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach((e,i)=>{
+      if(e.isIntersecting){
+        setTimeout(()=> e.target.classList.add('in'), i * 50);
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold:0.15});
+  panels.forEach(p=>io.observe(p));
+
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    panels.forEach(p=>p.classList.add('in'));
+  }
+</script>
+
 </body>
 </html>
